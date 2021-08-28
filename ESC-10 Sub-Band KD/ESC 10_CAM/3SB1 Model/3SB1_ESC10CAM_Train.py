@@ -67,7 +67,7 @@ test_loader=DataLoader(dataset=Test_Dataset,batch_size=batch_size,shuffle=False)
 class Teacher(nn.Module): # Subband-1 Network using Pre-Trained Resent-34
     def __init__(self):
         super(Teacher, self).__init__()
-        Pre_Trained_Layers=nn.Sequential(*list(models.resnet18(pretrained=True).children())[:-2])
+        Pre_Trained_Layers=nn.Sequential(*list(models.resnet34(pretrained=True).children())[:-2])
         #Pre_Trained_Layers = list(models.resnet34(pretrained=True).children())[:-4]
         #Pre_Trained_Layers = models.resnet34(pretrained=True) # Initialize model layers and weights
         #print(Pre_Trained_Layers)
